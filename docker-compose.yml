@@ -1,0 +1,15 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  kitetrader:
+    build: .
+    container_name: kitetrader
+    restart: unless-stopped
+    volumes:
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - TZ=Asia/Kolkata
+    command: python -m src.main --config config/config.yaml

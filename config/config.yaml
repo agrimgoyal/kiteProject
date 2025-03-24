@@ -1,0 +1,62 @@
+# API and Server Configuration
+js_server_url: "https://localhost:5000"
+
+
+# New fields for automated login
+
+
+
+# File Paths
+symbols_path: "Symbols.csv"
+corporate_path: "corporate_actions.csv"
+expired_orders_file: "expired_orders.csv"
+corporate_invalid_orders_file: "corporate_invalid.csv"
+completed_orders_file: "completed_orders.csv"
+mapping_file: "symbol_mapping.json"
+
+# Trading Configuration
+update_interval: 1
+test_mode: false
+time_based_test_mode: false
+use_buffer_percentage: false  # When true, 'buffer' column in CSV is treated as percentage. When false, it's treated as direct target price
+trigger_threshold_adjustment: 0.05
+
+# Time Settings
+auto_test_start_time: "16:30:00"
+auto_test_end_time: "06:30:00"  # End time is next morning
+gtt_expiry_time: "23:51:00"
+intraday_time: "19:00:00"
+cleanup_time: "23:59:00"
+last_trading_day: "FRI"
+
+# System Settings
+token_refresh_interval: 6000
+move_expired_orders: false
+delete_orders_on_shutdown: false
+
+# Order Count Settings
+order_count_file: "order_count.json"  # File to store order count
+max_orders_per_day: 2000  # Maximum orders allowed per day
+order_alert_threshold: 3000  # Threshold to send alert
+
+
+## Debugging Configuration
+# Basic Settings
+debug_enabled: true # Enable debugging features
+debug_level: "DEBUG" # DEBUG, INFO, WARNING, ERROR
+log_level: "DEBUG" # Overall logging level
+
+# Performance Tracking
+performance_tracking: true # Track function performance
+debug_log_interval: 60 # Seconds between debug log outputs
+performance_threshold: 0.1 # Log functions taking longer than this (seconds)
+
+# Memory and Resource Tracking
+memory_tracking: true # Track memory usage
+
+# Dashboard and Visualization
+debug_dashboard: false # Enable real-time debug dashboard
+
+# The credentials_encrypted flag indicates if your credentials are encrypted
+credentials_encrypted: false
+encryption_salt: "" # Used only with encrypted credentials
